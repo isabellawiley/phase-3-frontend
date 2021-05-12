@@ -12,8 +12,6 @@ function ProduceList(){
         .then(produce => setProduces(produce))
     },[id])
 
-    console.log(produces)
-
     let produceList = produces.map((produce) => <ProduceCard key={produce.id} produce={produce}/>)
 
     return (

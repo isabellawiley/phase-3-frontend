@@ -11,6 +11,19 @@ function NewRecipeForm(){
 
     function handleSubmit(e){
         e.preventDefault()
+
+        // Promise.all([
+        //     fetch(`http://localhost:9292/producerecipes`, {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-type": "application/json"
+        //         },
+        //         body: JSON.stringify({
+        //             recipe_id: 
+        //         })
+        //     })
+        // ])
+
         fetch(`http://localhost:9292/recipes`, {
             method: "POST",
             headers: {
@@ -33,6 +46,8 @@ function NewRecipeForm(){
             setDifficulty("")
             setDescription("")
         })
+
+
     }
 
     return (
