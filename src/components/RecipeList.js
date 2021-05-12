@@ -16,10 +16,10 @@ function RecipeList(){
     return (
         <div>
             <h1>RecipeList</h1>
-            {recipeList}
             <button>
-                <Link to={"/recipes/new-recipe"}>Add New Recipe</Link>
+                <Link to={"/new-recipe"}>Add New Recipe</Link>
             </button>
+            {recipeList}
         </div>
     );
 }
