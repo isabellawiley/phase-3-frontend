@@ -1,7 +1,9 @@
-function RecipeCard(){
+function RecipeCard({recipe}){
+    const {name, image} = recipe
     return (
         <div>
-            <h1>RecipeCard</h1>
+            <h2>{name}</h2>
+            <img src={image} alt={name}/>
         </div>
     );
 }

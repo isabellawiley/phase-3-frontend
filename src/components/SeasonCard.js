@@ -1,16 +1,14 @@
-import { useEffect } from "react";
+import {Link} from "react-router-dom";
 
-function SeasonCard({season, setClickedSeason}){
+function SeasonCard({season}){
     const {name, image, id} = season
     
-    function handleClick(e) {
-        setClickedSeason(id)
-    }
-
     return (
         <div>
-            <h1>{name}</h1>
-            <img onClick={handleClick} src={image}></img>
+            <Link to={`/seasons/${id}`}>
+                <h1>{name}</h1>
+                <img src={image} alt={name}/>
+            </Link>
         </div>
     );
 }

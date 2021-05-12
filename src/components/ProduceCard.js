@@ -1,7 +1,8 @@
-function ProduceCard(){
+function ProduceCard({produce}){
     return (
         <div>
-            <h1>ProduceCard</h1>
+            <h2>{produce.name}</h2>
+            <img src={produce.image} alt={produce.name}/>
         </div>
     );
 }
