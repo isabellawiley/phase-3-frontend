@@ -1,5 +1,6 @@
 
 import { Route, Switch } from 'react-router';
+import { createGlobalStyle } from "styled-components"
 import '../App.css';
 import Header from './Header';
 import NewRecipeForm from './NewRecipeForm';
@@ -8,9 +9,17 @@ import RecipeList from './RecipeList';
 import SeasonPage from './SeasonPage';
 import ShoppingList from './ShoppingList';
 
+
+const GlobalStyle= createGlobalStyle`
+  body {
+    background-color: #FBE9B1
+  }
+`
+
 function App() {
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/seasons">
