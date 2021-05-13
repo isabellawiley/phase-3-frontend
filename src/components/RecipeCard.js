@@ -1,4 +1,4 @@
-import {Card} from "semantic-ui-react"
+
 import RecipeDetails from "./RecipeDetails"
 
 function RecipeCard({recipe}){

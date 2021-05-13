@@ -1,4 +1,4 @@
-import {Modal, Image, Input, Button} from "semantic-ui-react"
+import {Modal, Image, Button} from "semantic-ui-react"
 import {useState} from "react";
 
 function RecipeDetails({recipe}){

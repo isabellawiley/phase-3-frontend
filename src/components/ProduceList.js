@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProduceCard from "./ProduceCard"
 import {Link, useParams} from "react-router-dom"
-import { Card } from "semantic-ui-react";
+
 
 function ProduceList(){
     const [produces, setProduces] = useState([])

@@ -1,7 +1,6 @@
 import RecipeCard from "./RecipeCard"
 import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom"
-import { Card } from "semantic-ui-react";
 
 function RecipeList(){
     const [recipes, setRecipes] = useState([])
