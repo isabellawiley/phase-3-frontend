@@ -1,5 +1,4 @@
 
-
 function ProduceCard({produce}){
     const {name, image, id} = produce
     function handleAddProduceClick(){

@@ -2,6 +2,7 @@
 import { Route, Switch } from 'react-router';
 import { createGlobalStyle } from "styled-components"
 import '../App.css';
+import AllProduce from './AllProduce';
 import AllRecipes from './AllRecipes';
 import Header from './Header';
 import NewRecipeForm from './NewRecipeForm';
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route exact path="/recipes">
           <AllRecipes />
+        </Route>
+        <Route exact path="/produce">
+          <AllProduce/>
         </Route>
         <Route exact path="/new-recipe">
           <NewRecipeForm/>

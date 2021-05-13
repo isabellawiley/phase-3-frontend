@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {useHistory} from "react-router-dom"
 import MultiSelect from "react-multi-select-component";
 
@@ -8,18 +8,25 @@ function NewRecipeForm(){
     const [link, setLink] = useState("");
     const [difficulty, setDifficulty] = useState(null);
     const [description, setDescription] = useState("");
-    // const [produceOne, setProduceOne] = useState("");
     const [selected, setSelected] = useState([]);
-    // const [produceTwo, setProduceTwo] = useState("");
     const history = useHistory();
+    const [produceArr, setProduceArr] = useState([]);
+    let options = [];
 
-    const options = [
-        {label: "Cucumber", value: "Cucumber"},
-        {label: "Kale", value: "Kale"},
-        {label: "Broccoli", value: "Broccoli"},
-        {label: "Tomato", value: "Tomato"},
-    ]
+    // const options = [
+    //     {label: "Cucumber", value: "Cucumber"},
+    //     {label: "Kale", value: "Kale"},
+    //     {label: "Broccoli", value: "Broccoli"},
+    //     {label: "Tomato", value: "Tomato"},
+    // ]
 
+    useEffect(() => {
+        fetch(`http://localhost:9292/produces`)
+        .then(res => res.json())
+        .then((produce) => setProduceArr(produce))
+    },[])
+
+    produceArr.map((produce_obj) => options.push({label: produce_obj.name, value: produce_obj.name}))
     
 
     function handleSubmit(e){

@@ -1,4 +1,3 @@
-import Filter from "./Filter";
 import SeasonCard from "./SeasonCard";
 import {useEffect, useState} from "react";
 import { Card } from 'semantic-ui-react'
@@ -21,7 +20,6 @@ function SeasonPage(){
             <Card.Group itemsPerRow={2}>
                 {seasonList}
             </Card.Group>
-            <Filter />
         </div>
     );
 }

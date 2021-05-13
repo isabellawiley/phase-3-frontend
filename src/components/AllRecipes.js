@@ -10,7 +10,7 @@ function AllRecipes(){
         .then(res => res.json())
         .then(recipe => setRecipes(recipe))
     },[])
-    console.log(recipes)
+    
     let recipeList = recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe}/>)
     
     return (
