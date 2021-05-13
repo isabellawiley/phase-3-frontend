@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProduceCard from "./ProduceCard"
 import {Link, useParams} from "react-router-dom"
 
+
 function ProduceList(){
     const [produces, setProduces] = useState([])
     const {id} = useParams();
@@ -16,11 +17,13 @@ function ProduceList(){
 
     return (
         <div>
-            <h1>ProduceList</h1>
+            <h2>Produce List</h2>
             <button>
                 <Link to={`/recipes/${id}`}>View By Recipe</Link>
             </button>
+            <div>
             {produceList}
+            </div>
         </div>
     );
 }

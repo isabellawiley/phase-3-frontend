@@ -2,6 +2,7 @@
 import { Route, Switch } from 'react-router';
 import { createGlobalStyle } from "styled-components"
 import '../App.css';
+import AllRecipes from './AllRecipes';
 import Header from './Header';
 import NewRecipeForm from './NewRecipeForm';
 import ProduceList from './ProduceList';
@@ -12,7 +13,23 @@ import ShoppingList from './ShoppingList';
 
 const GlobalStyle= createGlobalStyle`
   body {
-    background-color: #FBE9B1
+    background-color: #699e5c
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 7em;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 4em;
+  }
+
+  a {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7em;
+    padding-right: 15px;
   }
 `
 
@@ -30,6 +47,9 @@ function App() {
         </Route>
         <Route exact path="/recipes/:id">
           <RecipeList/>
+        </Route>
+        <Route exact path="/recipes">
+          <AllRecipes />
         </Route>
         <Route exact path="/new-recipe">
           <NewRecipeForm/>

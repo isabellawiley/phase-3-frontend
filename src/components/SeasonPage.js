@@ -16,8 +16,8 @@ function SeasonPage(){
     
 
     return (
-        <div>
-            <h1>SeasonPage</h1>
+        <div id="season-content">
+            <h2>Choose a season to get started</h2>
             <Card.Group itemsPerRow={2}>
                 {seasonList}
             </Card.Group>

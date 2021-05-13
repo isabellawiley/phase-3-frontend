@@ -1,5 +1,5 @@
 body {
-  margin: 0 15% 0 15%;
+  margin: 0 13% 0 13%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -25,9 +25,86 @@ code {
 }
 
 .ui.card, .ui.cards>.card {
-  width: 450px;
+  width: 400px;
 }
 
 .ui.card>.image>img, .ui.cards>.card>.image>img {
-  height: 330px; 
+  height: 290px;
+  align-items: center; 
+}
+
+.header img {
+  /* background-image: url("https://imgmedia.lbb.in/media/2020/05/5ed0b0441477ba1119fce215_1590734916904.jpg");
+  background-size: 200px; 
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.header img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: rgb(64 113 79);
+  margin-top: 40px;
+  line-height: 250%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  padding-left: 15px;
+}
+
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 1.5rem;
+  background-color: rgb(219, 191, 154);
+  border-radius: 5%;
+}
+
+.produce-pic {
+    justify-self: center;
+    height: 12rem;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.season-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-form {
+  padding: 2em;
+  margin: 0 auto;
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-content: center;
+}
+
+.recipe-data-field {
+  display: inline-block;
+  float: left;
 }

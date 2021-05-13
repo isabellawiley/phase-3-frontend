@@ -11,8 +11,6 @@ function SeasonCard({season}){
                 image={image}
                 header={name}
                 />
-                {/* <h1>{name}</h1>
-                <img src={image} alt={name}/> */}
             </Link>
         </div>
     );

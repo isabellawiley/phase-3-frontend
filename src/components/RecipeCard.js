@@ -1,9 +1,13 @@
+
+import RecipeDetails from "./RecipeDetails"
+
 function RecipeCard({recipe}){
     const {name, image} = recipe
     return (
-        <div>
-            <h2>{name}</h2>
-            <img src={image} alt={name}/>
+        <div className="card">
+              <img src={image} alt={name} className="produce-pic"/>
+              <h3>{name}</h3>
+              <RecipeDetails recipe={recipe}/>
         </div>
     );
 }
