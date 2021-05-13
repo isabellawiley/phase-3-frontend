@@ -78,12 +78,14 @@ code {
   display: inline-grid;
   margin: 1rem 1.5rem;
   background-color: rgb(219, 191, 154);
+  border-radius: 5%;
 }
 
 .produce-pic {
     justify-self: center;
     height: 12rem;
     width: 100%;
+    border-radius: 100%;
 }
 
 .season-content {
