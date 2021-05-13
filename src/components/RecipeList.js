@@ -20,9 +20,7 @@ function RecipeList(){
             <button>
                 <Link to={"/new-recipe"}>Add New Recipe</Link>
             </button>
-            <Card.Group>
             {recipeList}
-            </Card.Group>
         </div>
     );
 }

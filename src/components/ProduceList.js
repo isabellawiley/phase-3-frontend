@@ -21,9 +21,9 @@ function ProduceList(){
             <button>
                 <Link to={`/recipes/${id}`}>View By Recipe</Link>
             </button>
-            <Card.Group itemsPerRow={4}>
+            <div>
             {produceList}
-            </Card.Group>
+            </div>
         </div>
     );
 }
