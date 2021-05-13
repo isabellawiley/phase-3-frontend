@@ -6,6 +6,7 @@ function NavBar(){
             <nav>
                 <NavLink to="/shopping-list">Shopping List</NavLink>
                 <NavLink to="/recipes">View All Recipes</NavLink>
+                <NavLink to="/seasons">Season List</NavLink>
             </nav>
         </div>
     );

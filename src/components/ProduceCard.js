@@ -1,4 +1,4 @@
-import { Card } from 'semantic-ui-react'
+
 
 function ProduceCard({produce}){
     

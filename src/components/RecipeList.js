@@ -20,7 +20,9 @@ function RecipeList(){
             <button>
                 <Link to={"/new-recipe"}>Add New Recipe</Link>
             </button>
+            <div>
             {recipeList}
+            </div>
         </div>
     );
 }

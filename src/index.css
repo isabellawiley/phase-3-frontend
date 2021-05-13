@@ -29,7 +29,8 @@ code {
 }
 
 .ui.card>.image>img, .ui.cards>.card>.image>img {
-  height: 290px; 
+  height: 290px;
+  align-items: center; 
 }
 
 .header img {
@@ -76,8 +77,13 @@ code {
   background-color: rgb(219, 191, 154);
 }
 
-.produce-pic{
+.produce-pic {
     justify-self: center;
     height: 12rem;
     width: 100%;
+}
+
+.season-content {
+  flex-direction: row;
+  justify-content: center;
 }
