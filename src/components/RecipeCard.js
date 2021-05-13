@@ -1,9 +1,13 @@
+import {Card} from "semantic-ui-react"
+
 function RecipeCard({recipe}){
     const {name, image} = recipe
     return (
         <div>
-            <h2>{name}</h2>
-            <img src={image} alt={name}/>
+            <Card>
+              header={name}
+              image={image}
+            </Card>
         </div>
     );
 }

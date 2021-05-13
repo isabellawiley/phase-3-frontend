@@ -25,9 +25,60 @@ code {
 }
 
 .ui.card, .ui.cards>.card {
-  width: 450px;
+  width: 400px;
 }
 
 .ui.card>.image>img, .ui.cards>.card>.image>img {
-  height: 330px; 
+  height: 290px; 
+}
+
+.header img {
+  /* background-image: url("https://imgmedia.lbb.in/media/2020/05/5ed0b0441477ba1119fce215_1590734916904.jpg");
+  background-size: 200px; 
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.header img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: rgb(64 113 79);
+  margin-top: 40px;
+  line-height: 250%;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  color: white;
+  padding-left: 15px;
+}
+
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #e04b52; 
+  border-radius: 100%;
+}
+
+.produce-pic{
+    justify-self: center;
+    height: 20rem;
+    width: auto;
 }

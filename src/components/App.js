@@ -12,7 +12,23 @@ import ShoppingList from './ShoppingList';
 
 const GlobalStyle= createGlobalStyle`
   body {
-    background-color: #FBE9B1
+    background-color: #699e5c
+  }
+
+  h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 7em;
+  }
+
+  h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 4em;
+  }
+
+  a {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7em;
+    padding-right: 15px;
   }
 `
 

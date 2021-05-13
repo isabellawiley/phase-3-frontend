@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard"
 import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom"
+import { Card } from "semantic-ui-react";
 
 function RecipeList(){
     const [recipes, setRecipes] = useState([])
@@ -19,7 +20,9 @@ function RecipeList(){
             <button>
                 <Link to={"/new-recipe"}>Add New Recipe</Link>
             </button>
+            <Card.Group>
             {recipeList}
+            </Card.Group>
         </div>
     );
 }
