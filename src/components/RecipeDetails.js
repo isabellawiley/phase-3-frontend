@@ -1,9 +1,18 @@
 import {Modal, Image, Button} from "semantic-ui-react"
 import {useState} from "react";
 
-function RecipeDetails({recipe}){
-    const {name, description, link, difficulty, image} = recipe
+function RecipeDetails({recipe, produceArr}){
+    const {id, name, description, link, difficulty, image} = recipe
     const [open, setOpen] = useState(false)
+
+    // const filteredArr = produceArr.filter((produce) => produce)
+    // produceArr.map((produce) => console.log(produce))
+    // console.log(produceArr)
+
+
+    // function handleClick(){
+      
+    // }
 
     return (
         <Modal onClose={() => setOpen(false)}
@@ -16,6 +25,7 @@ function RecipeDetails({recipe}){
           <p className="modaltext">{description}</p>
           <p className="modaltext">Difficulty Level: {difficulty}</p>
           <a className="modallink" href={link} target="_blank" rel="noreferrer">See the full recipe!</a>
+          {/* <button onClick={handleClick}>Add Produce to List</button> */}
         </Modal.Description>
       </Modal.Content>
     </Modal>

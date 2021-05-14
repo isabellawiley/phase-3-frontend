@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import MultiSelect from "react-multi-select-component";
 
-function NewRecipeForm(){
+function NewRecipeForm({produceArr}){
     const [name, setName] = useState("");
     const [imageURL, setImageURL] = useState("");
     const [link, setLink] = useState("");
@@ -10,24 +10,9 @@ function NewRecipeForm(){
     const [description, setDescription] = useState("");
     const [selected, setSelected] = useState([]);
     const history = useHistory();
-    const [produceArr, setProduceArr] = useState([]);
     let options = [];
 
-    // const options = [
-    //     {label: "Cucumber", value: "Cucumber"},
-    //     {label: "Kale", value: "Kale"},
-    //     {label: "Broccoli", value: "Broccoli"},
-    //     {label: "Tomato", value: "Tomato"},
-    // ]
-
-    useEffect(() => {
-        fetch(`http://localhost:9292/produces`)
-        .then(res => res.json())
-        .then((produce) => setProduceArr(produce))
-    },[])
-
     produceArr.map((produce_obj) => options.push({label: produce_obj.name, value: produce_obj.name}))
-    
 
     function handleSubmit(e){
         e.preventDefault()
@@ -56,8 +41,6 @@ function NewRecipeForm(){
             setDescription("")
             setSelected([])
         })
-
-
     }
 
     return (
@@ -76,27 +59,12 @@ function NewRecipeForm(){
                 <input className="recipe-data-field" id="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)}></input>
                 <label htmlFor="produce-one" className="recipe-data-field">Produce</label>
                 <MultiSelect 
-                options={options}
-                value={selected}
-                onChange={setSelected}
-                labelledBy="Select"
+                    options={options}
+                    value={selected}
+                    onChange={setSelected}
+                    labelledBy="Select"
                 />
                 <input className="recipe-data-field" type="submit" value="Add Your Recipe!"></input>
-                {/* <select className="recipe-data-field" id="produce-one" value={produceOne} onChange={(e) => setProduceOne(e.target.value)} name="produce-one">
-                    <option value="">Select Produce</option>
-                    <option value="Cucumber">Cucumber</option>
-                    <option value="Kale">Kale</option>
-                    <option value="Broccoli">Broccoli</option>
-                    <option value="Tomato">Tomato</option>
-                </select> */}
-                {/* <label htmlFor="produce-two" className="recipe-data-field">Produce</label>
-                <select className="recipe-data-field" id="produce-two" value={produceTwo} onChange={(e) => setProduceTwo(e.target.value)} name="produce-two">
-                    <option value="">Select Produce</option>
-                    <option value="Cucumber">Cucumber</option>
-                    <option value="Kale">Kale</option>
-                    <option value="Broccoli">Broccoli</option>
-                    <option value="Tomato">Tomato</option>
-                </select> */}
             </form>
         </div>
     );

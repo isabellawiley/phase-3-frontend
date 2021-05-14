@@ -1,22 +1,20 @@
 
-function ProduceCard({produce, onAddToList}){
+function ShoppingListCard({produce, onRemoveFromList}){
     const {name, image, id} = produce
 
-    function handleAddProduceClick(){
+    function handleRemove(){
         fetch(`http://localhost:9292/produces/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json"
             },
             body: JSON.stringify({
-                on_list: true
+                on_list: false
             })
         })
-        // .then(r => r.json())
-        // .then((updatedProduce) => {
-        //     // const addedProduce = [updatedProduce];
-        //     // onAddToList(addedProduce);
-            
+        .then(r => r.json())
+        .then((updatedProduce) => updatedProduce)
+            // onRemoveFromList([updatedProduce])
         // })
     }
 
@@ -24,9 +22,9 @@ function ProduceCard({produce, onAddToList}){
         <div className="card"> 
             <img src={image} alt={name} className="produce-pic"/>
             <h3>{name}</h3>
-            <button onClick={handleAddProduceClick} >Add to Shopping List</button>
+            <button onClick={handleRemove}>Remove from List</button>
         </div>
     );
 }
 
-export default ProduceCard; 
+export default ShoppingListCard; 

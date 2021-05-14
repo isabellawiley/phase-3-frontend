@@ -2,8 +2,9 @@ import RecipeCard from "./RecipeCard"
 import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom"
 
-function RecipeList(){
-    const [recipes, setRecipes] = useState([])
+function RecipeList({deleteRecipe}){
+    const [recipes, setRecipes] = useState([]);
+    // const [produces, setProduces] = useState([]);
     const {id} = useParams();
     
     useEffect(() => {
@@ -12,7 +13,8 @@ function RecipeList(){
         .then(recipe => setRecipes(recipe))
     },[id])
 
-    let recipeList = recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe}/>)
+    let recipeList = recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe}/>)
+
     return (
         <div>
             <h1>RecipeList</h1>

@@ -1,22 +1,30 @@
-import {useState, useEffect} from "react";
-import ProduceCard from "./ProduceCard";
+import { useState, useEffect } from "react";
+import ShoppingListCard from "./ShoppingListCard";
 
 function ShoppingList(){
-    const [shoppingList, setShoppingList] = useState([])
-    
+    const [produces, setProduces] = useState([]);
+    // const [shoppingList, setShoppingList] = useState([]);
+
     useEffect(() => {
         fetch(`http://localhost:9292/produces`)
         .then(res => res.json())
-        .then(produce => setShoppingList(produce))
-    },[])
-    console.log(shoppingList)
-    let produceList = shoppingList.map((listItem) => <ProduceCard key={listItem.id} produce={listItem}/>)
+        .then((produce) => setProduces(produce))
+      },[])
+
+    // function handleRemoveProduceFromList(item){
+    //     const removeItem = shoppingList.filter((produce) => produce !== item);
+    //     setShoppingList(removeItem);
+    // }
     
+    let filteredList = produces.filter((produce) => produce.on_list === true)
     
+    let list = filteredList.map((produce) => <ShoppingListCard key={produce.id} produce={produce} />)
+    // setShoppingList(list)
+
     return (
         <div>
-            <h2>To Buy</h2>
-            {produceList}
+            <h2>Shopping List</h2>
+            {list}
         </div>
     );
 }

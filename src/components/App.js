@@ -1,5 +1,6 @@
 
-import { Route, Switch } from 'react-router';
+import { useState, useEffect } from 'react';
+import { Redirect, Route, Switch } from 'react-router';
 import { createGlobalStyle } from "styled-components"
 import '../App.css';
 import AllProduce from './AllProduce';
@@ -35,19 +36,54 @@ const GlobalStyle= createGlobalStyle`
 `
 
 function App() {
+  const [produceArr, setProduceArr] = useState([]);
+  // const [recipeArr, setRecipeArr] = useState([]);
+  // const [listArr, setListArr] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/produces`)
+    .then(res => res.json())
+    .then((produce) => setProduceArr(produce))
+  },[])
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:9292/recipes`)
+  //   .then(res => res.json())
+  //   .then((recipe) => setRecipeArr(recipe))
+  // },[])
+
+  // function handleAddProduceToList(itemsArr){
+  //   const addItems = [...listArr, ...itemsArr];
+  //   setListArr(addItems);
+  // }
+
+  // function handleRemoveProduceFromList(item){
+  //   const removeItem = listArr.filter((produce) => produce !== item);
+  //   setListArr(removeItem);
+  // }
+
+  // let deleteRecipe = (recipeName) => {
+  //   let deletedRecipesArr = recipeArr.filter(recipe => recipe.name !== recipeName)
+  //   setRecipeArr(deletedRecipesArr)
+  // }
+
+  // console.log(produceArr)
   return (
     <div>
       <GlobalStyle />
       <Header />
       <Switch>
+        <Route exact path="/">
+          <Redirect to="/seasons"/>
+        </Route>
         <Route exact path="/seasons">
           <SeasonPage />
         </Route>
         <Route exact path="/seasons/:id">
-          <ProduceList/>
+          <ProduceList />
         </Route>
         <Route exact path="/recipes/:id">
-          <RecipeList/>
+          <RecipeList />
         </Route>
         <Route exact path="/recipes">
           <AllRecipes />
@@ -56,7 +92,7 @@ function App() {
           <AllProduce/>
         </Route>
         <Route exact path="/new-recipe">
-          <NewRecipeForm/>
+          <NewRecipeForm produceArr={produceArr}/>
         </Route>
         <Route exact path="/shopping-list">
           <ShoppingList />
