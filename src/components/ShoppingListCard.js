@@ -1,3 +1,4 @@
+import { Button, Image, List } from 'semantic-ui-react';
 
 function ShoppingListCard({produce, onRemoveFromList}){
     const {name, image, id} = produce
@@ -19,11 +20,13 @@ function ShoppingListCard({produce, onRemoveFromList}){
     }
 
     return (
+        <>
         <div className="card"> 
             <img src={image} alt={name} className="produce-pic"/>
             <h3>{name}</h3>
-            <button onClick={handleRemove}>Remove from List</button>
+            <Button onClick={handleRemove}>Remove from List</Button>
         </div>
+      </>
     );
 }
 

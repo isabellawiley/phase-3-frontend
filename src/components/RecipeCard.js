@@ -1,3 +1,4 @@
+import { Button } from "semantic-ui-react";
 import RecipeDetails from "./RecipeDetails"
 
 function RecipeCard({recipe, produceArr}){
@@ -21,7 +22,7 @@ function RecipeCard({recipe, produceArr}){
               <img src={image} alt={name} className="produce-pic"/>
               <h3>{name}</h3>
               <RecipeDetails recipe={recipe} produceArr={produceArr}/>
-              <button onClick={handleDelete}>Delete</button>
+              <Button class="ui tiny button" onClick={handleDelete}>Delete</Button>
         </div>
     );
 }

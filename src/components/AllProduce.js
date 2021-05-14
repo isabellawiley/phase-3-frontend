@@ -15,7 +15,7 @@ function AllProduce(){
     
     return (
         <div>
-            <h1>All Produce</h1>
+            <h2>All Produce</h2>
             {produceList}
         </div>
     );

@@ -26,6 +26,9 @@ const GlobalStyle= createGlobalStyle`
   h2 {
     font-family: 'Crimson Pro', serif;
     font-size: 4em;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   a {

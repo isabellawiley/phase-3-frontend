@@ -17,7 +17,7 @@ function RecipeDetails({recipe, produceArr}){
     return (
         <Modal onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        open={open} trigger={<Button class="ui small button">More Details</Button>}>
+        open={open} trigger={<Button class="ui tiny button">More Details</Button>}>
         <h2 className="modalheader">{name}</h2>
         <Modal.Content image>
         <Image size='medium' src={image} wrapped alt={name}/>

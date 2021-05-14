@@ -108,3 +108,7 @@ code {
   display: inline-block;
   float: left;
 }
+
+.ui.button {
+  margin: .25em .25em 0 0;
+}

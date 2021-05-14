@@ -1,6 +1,7 @@
 import RecipeCard from "./RecipeCard"
 import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom"
+import { Button, ButtonContent } from "semantic-ui-react";
 
 function RecipeList({deleteRecipe}){
     const [recipes, setRecipes] = useState([]);
@@ -17,10 +18,10 @@ function RecipeList({deleteRecipe}){
 
     return (
         <div>
-            <h1>RecipeList</h1>
-            <button>
+            <h2>RecipeList</h2>
+            <Button class="ui tiny button">
                 <Link to={"/new-recipe"}>Add New Recipe</Link>
-            </button>
+                </Button>
             <div>
             {recipeList}
             </div>
