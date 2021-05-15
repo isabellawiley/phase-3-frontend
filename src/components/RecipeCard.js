@@ -1,7 +1,7 @@
 import { Button } from "semantic-ui-react";
 import RecipeDetails from "./RecipeDetails"
 
-function RecipeCard({recipe, produceArr}){
+function RecipeCard({recipe, produceArr, deleteRecipe}){
     const {name, image} = recipe
     const recipeName = name.toLowerCase().split(' ').join('-')
 
@@ -9,12 +9,11 @@ function RecipeCard({recipe, produceArr}){
         fetch(`http://localhost:9292/recipes/${recipeName}`, {
             method: "DELETE",
         })
-        // .then(res => res.json())
-        // .then(() => {
-        //     // deleteRecipe(name)
-        // })
+        .then(res => res.json())
+        .then(() => {
+            deleteRecipe(name)
+        })
 
-        // need to update state so we don't have to refresh
     }
 
     return (

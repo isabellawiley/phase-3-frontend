@@ -39,9 +39,18 @@ const GlobalStyle= createGlobalStyle`
 `
 
 function App() {
+  const [seasons, setSeasons] = useState([]);
   const [produceArr, setProduceArr] = useState([]);
-  // const [recipeArr, setRecipeArr] = useState([]);
+  const [recipeArr, setRecipeArr] = useState([]);
+  // const [produceSeasonId, setProduceSeasonId] = useState("");
+  // const [recipesSeasonId, setRecipeSeasonId] = useState("");
   // const [listArr, setListArr] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/seasons`)
+    .then(res => res.json())
+    .then((season) => setSeasons(season))
+  },[])
 
   useEffect(() => {
     fetch(`http://localhost:9292/produces`)
@@ -49,11 +58,11 @@ function App() {
     .then((produce) => setProduceArr(produce))
   },[])
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:9292/recipes`)
-  //   .then(res => res.json())
-  //   .then((recipe) => setRecipeArr(recipe))
-  // },[])
+  useEffect(() => {
+    fetch(`http://localhost:9292/recipes`)
+    .then(res => res.json())
+    .then((recipe) => setRecipeArr(recipe))
+  },[])
 
   // function handleAddProduceToList(itemsArr){
   //   const addItems = [...listArr, ...itemsArr];
@@ -65,12 +74,11 @@ function App() {
   //   setListArr(removeItem);
   // }
 
-  // let deleteRecipe = (recipeName) => {
-  //   let deletedRecipesArr = recipeArr.filter(recipe => recipe.name !== recipeName)
-  //   setRecipeArr(deletedRecipesArr)
-  // }
+  function deleteRecipe(recipeName){
+    let deletedRecipesArr = recipeArr.filter(recipe => recipe.name !== recipeName)
+    setRecipeArr(deletedRecipesArr)
+  }
 
-  // console.log(produceArr)
   return (
     <div>
       <GlobalStyle />
@@ -80,16 +88,16 @@ function App() {
           <Redirect to="/seasons"/>
         </Route>
         <Route exact path="/seasons">
-          <SeasonPage />
+          <SeasonPage seasons={seasons} />
         </Route>
         <Route exact path="/seasons/:id">
           <ProduceList />
         </Route>
         <Route exact path="/recipes/:id">
-          <RecipeList />
+          <RecipeList deleteRecipe={deleteRecipe} />
         </Route>
         <Route exact path="/recipes">
-          <AllRecipes />
+          <AllRecipes recipeArr={recipeArr}/>
         </Route>
         <Route exact path="/produce">
           <AllProduce/>

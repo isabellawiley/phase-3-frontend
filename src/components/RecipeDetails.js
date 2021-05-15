@@ -2,7 +2,7 @@ import {Modal, Image, Button} from "semantic-ui-react"
 import {useState} from "react";
 
 function RecipeDetails({recipe, produceArr}){
-    const {id, name, description, link, difficulty, image} = recipe
+    const { name, description, link, difficulty, image} = recipe
     const [open, setOpen] = useState(false)
 
     // const filteredArr = produceArr.filter((produce) => produce)

@@ -1,17 +1,8 @@
 import RecipeCard from "./RecipeCard";
-import {useState, useEffect} from "react";
 
-
-function AllRecipes(){
-    const [recipes, setRecipes] = useState([])
+function AllRecipes({recipeArr}){
     
-    useEffect(() => {
-        fetch(`http://localhost:9292/recipes`)
-        .then(res => res.json())
-        .then(recipe => setRecipes(recipe))
-    },[])
-    
-    let recipeList = recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe}/>)
+    let recipeList = recipeArr.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe}/>)
     
     return (
         <div>

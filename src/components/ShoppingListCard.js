@@ -1,4 +1,4 @@
-import { Button, Image, List } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 function ShoppingListCard({produce, onRemoveFromList}){
     const {name, image, id} = produce

@@ -3,8 +3,8 @@ import ProduceCard from "./ProduceCard"
 import {Link, useParams} from "react-router-dom"
 
 
-function ProduceList({onAddToList}){
-    const [produces, setProduces] = useState([])
+function ProduceList({produceSeasonId}){
+    const [produces, setProduces] = useState([]);
     const {id} = useParams();
     
     useEffect(() => {
@@ -13,7 +13,7 @@ function ProduceList({onAddToList}){
         .then(produce => setProduces(produce))
     },[id])
 
-    let produceList = produces.map((produce) => <ProduceCard key={produce.id} produce={produce} onAddToList={onAddToList}/>)
+    let produceList = produces.map((produce) => <ProduceCard key={produce.id} produce={produce}/>)
 
     return (
         <div>

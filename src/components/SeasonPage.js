@@ -1,19 +1,10 @@
 import SeasonCard from "./SeasonCard";
-import {useEffect, useState} from "react";
 import { Card } from 'semantic-ui-react'
 
-function SeasonPage(){
-    const [seasons, setSeasons] = useState([])
-
-    useEffect(()=> {
-        fetch("http://localhost:9292/seasons")
-        .then(r => r.json())
-        .then(seasonData => setSeasons(seasonData))
-    }, [])
+function SeasonPage({seasons}){
     
-    let seasonList = seasons.map((season) => <SeasonCard key={season.id} season={season}/>)
+    let seasonList = seasons.map((season) => <SeasonCard key={season.id} season={season} />)
     
-
     return (
         <div id="season-content">
             <h2>Choose a season to get started</h2>
